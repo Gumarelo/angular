@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Admininistrador de Contactos</title>
+	 <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+	 <style>
+		body {
+		    font-family:sans-serif;
+		    background-color: #f5f5f5;
+		}
+		div {
+		    margin:20px 5px;
+		}
+    </style>
+</head>
+<body>
+	<div ng-app="app">
+		<div ng-controller="ContactController">
+			<form>
+				<label>Nombre</label>
+					<input type="text" name="nombre" ng-model="nuevoContacto.nombre">
+				<label>Email</label>
+					<input type="text" name="email" ng-model="nuevoContacto.email">
+				<label>Telefono</label>
+					<input type="text" name="telefono" ng-model="nuevoContacto.telefono">
+					<br>
+					<input type="hidden" ng-model="nuevoContacto.id">
+				<input type="button" value="Guardar" ng-click="guardarContacto()">
+			</form>
+
+			<table>
+				<thead>
+					<tr>
+						<th>Nombre</th>
+						<th>Email</th>
+						<th>Telefono</th>
+						<th>Accion</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="contacto in contactos">
+						<td>{{ contacto.nombre }}</td>
+						<td>{{ contacto.email }}</td>
+						<td>{{ contacto.telefono }}</td>
+						<td>
+							<a href="#" ng-click="editar(contacto.id)">Editar</a>
+							<a href="#" ng-click="borrar(contacto.id)">Borrar</a>
+						</td>
+					</tr>
+				</tbody>
+			</table>	
+		</div>
+	</div>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+	<script src="app.js"></script>
+</body>
+</html>

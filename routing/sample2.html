@@ -1,0 +1,52 @@
+<!-- 
+	Tutorial basado en el ejemplo de este link
+	http://viralpatel.net/blogs/angularjs-routing-and-views-tutorial-with-example/
+
+-->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Ejemplo Routing</title>
+	 <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+	 <style>
+		body {
+		  padding-top: 10px;
+		  background-color: #F5F5F5;
+		}
+    </style>
+</head>
+<body ng-app="sampleApp">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-9">
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th>#</th><th>Order No.</th><th>Details</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>1</td><td>1234</td><td>15" Samsung Laptop</td>
+							<td><a href="#ShowOrder/1234">Show Details</a></td>
+						</tr>
+						<tr>
+							<td>2</td><td>5412</td><td>2TB Seagate Hard Drive</td>
+							<td><a href="#ShowOrder/5412">Show Details</a></td>
+						</tr>
+						<tr>
+							<td>3</td><td>9478</td><td>D-Link router</td>
+							<td><a href="#ShowOrder/9478">Show Details</a></td>
+						</tr>
+					</tbody>
+				</table>
+				<div ng-view=""></div>
+			</div>
+		</div>
+	</div>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+	<script src="app2.js"></script>
+</body>
+</html>
+

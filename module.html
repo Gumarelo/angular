@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+	<meta charset="ISO-8859-1">
+	<title>Insert title here</title>
+</head>
+<body>
+	<div ng-app="myApp" ng-controller="myCtrl">
+		<p ng-hide="myVar">
+			Nombre Completo: {{nombre + ' ' + apellido}}
+		</p>
+		
+	</div>
+	
+	<!-- A common advise for HTML applications, is to place all scripts at the very bottom of the <body> element. -->
+	<!-- Ejemplo sin usar archivos
+	<script>
+		var app = angular.module("myApp", []);
+		
+		app.controller("myCtrl", function($scope){
+			$scope.nombre = "Jorge";
+			$scope.apellido = "Casariego";
+		
+		});
+	</script>
+	 -->
+	 
+	 <script src="myApp.js"></script>
+	 <script src="myCtrl.js"></script>
+</body>
+</html>

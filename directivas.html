@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+	<meta charset="ISO-8859-1">
+	<title>Directivas</title>
+</head>
+<body>
+	<div ng-app="" ng-init="nombre='John'; cantidad=5; precio=5; 
+							nombres=[{name: 'Juan', country: 'PY'}, {name: 'Jose', country: 'BR'}, {name: 'Jorge', country: 'AR'}]">
+		<p>Nombre: <input type="text" ng-model="nombre"> </p>
+		<p>Cantidad: <input type="text" ng-model="cantidad"> </p>
+		<p>Precio: <input type="text" ng-model="precio"> </p>
+		
+		<p>Escribiste {{nombre}} y el total en dolares es {{precio * cantidad}}</p>
+		
+		<p>Filtrar nombres</p>
+		<p><input type="text" ng-model="test"></p>
+		<ul>
+			<li ng-repeat="x in nombres | filter:test | orderBy: 'country'">
+				{{ x.name + ' - ' + x.country }}
+			</li>
+		</ul>
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+	<meta charset="ISO-8859-1">
+	<title>Insert title here</title>
+</head>
+<body>
+	<div ng-app="" ng-controller="personaController">
+		<!-- DESHABILITAR o HABILITAR boton -->
+		<p><button ng-disabled="mySwitch">Click me</button></p>
+		<p><input type="checkbox" ng-model="mySwitch" >Deshabilitar Boton</p>
+		
+		<!-- Mostrar o esconder -->
+		<p ng-show="visible"> Soy Visible</p>
+		<p><input type="checkbox" ng-model="visible" >Hacer visible</p>
+		
+		<p><button ng-click=" count = count + 1 ">Contador de clicks</button>
+		<p>{{count}}</p>
+		
+		
+		<p><button ng-click="toggle()">Toggle</button></p>
+		
+		<p ng-hide="myVar">
+			Nombre: <input type="text" ng-model="nombre">
+			Apellido: <input type="text" ng-model="apellido">
+			<br>
+			Nombre Completo: {{nombre + ' ' + apellido}}
+		</p>
+		
+	</div>
+	
+	<script>
+		function personaController($scope){
+			$scope.nombre = "John",
+			$scope.apellido = "Gonzalez",
+			$scope.myVar = false,
+			$scope.toggle = function(){
+				$scope.myVar = !$scope.myVar;
+			}
+		}
+		
+	</script>
+	
+</body>
+</html>

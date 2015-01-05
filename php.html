@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+	<title>PHP</title>
+</head>
+<body>
+	<div ng-app="" ng-controller="clientesController">
+		<input type="text" ng-model="test">
+		<table>
+			<tr ng-repeat="x in nombres | filter:test">
+		    <td>Nombre: {{ x.nombre }}</td>
+		    <td>Fecha: {{ x.fecha }}</td>
+		  </tr>
+		</table>
+	</div>
+	
+	
+	<script>
+		function clientesController($scope, $http){
+			var bd = "ajax/getCustomers.php";
+			$http.get(bd)
+			.success(function(response){
+				$scope.nombres = response;
+			});
+		}	
+	</script>
+</body>
+</html>

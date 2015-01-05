@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+	<meta charset="ISO-8859-1">
+	<title>Insert title here</title>
+</head>
+<body>
+	<div ng-app="" ng-init="persona={nombre:'Jorge', apellido:'Casariego'}">
+		<p>El nombre de la persona es {{persona.nombre + " " + persona.apellido}} usando expressiones</p>
+		<p>El nombre de la persona es <span ng-bind="persona.nombre + ' ' + persona.apellido"></span> usando ng-bind</p>
+	</div>
+
+</body>
+</html>

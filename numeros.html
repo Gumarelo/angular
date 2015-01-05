@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+	<meta charset="ISO-8859-1">
+	<title>Insert title here</title>
+</head>
+<body>
+	<div ng-app="" ng-init="cantidad=1; costo=5">
+		<p>El total en dolares es {{ cantidad * costo | currency}} usando <b>expression</b></p>
+		<p>El total en dolares es <span ng-bind="cantidad * costo | currency"></span> usando <b>ng-bind</b></p>
+	</div>
+
+</body>
+</html>

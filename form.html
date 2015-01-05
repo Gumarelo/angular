@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+	<meta charset="ISO-8859-1">
+	<title>Insert title here</title>
+</head>
+<body>
+	<div ng-app="" ng-controller="formController">
+		<form novalidate>
+			Nombre: <br>
+			<input type="text" ng-model="user.nombre"><br>
+			
+			Apellido: <br>
+			<input type="text" ng-model="user.apellido"><br><br>
+			<button ng-click="reset()">RESET</button>
+		</form>
+		
+		<p>Formulario: {{user}}</p>
+		<p>Master: {{master}}</p>
+	</div>
+	
+	<script>
+		function formController($scope){
+			$scope.master = {nombre: "Jorge", apellido:"Casariego"};
+			$scope.reset = function(){
+				$scope.user = angular.copy($scope.master);
+			};
+			$scope.reset();
+		};
+	</script>
+</body>
+</html>
