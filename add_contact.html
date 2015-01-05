@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Admininistrador de Contactos</title>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+</head>
+<body>
+
+	<div ng-app="" ng-controller="ContactController">
+		Email: <input type="text" ng-model="newcontact">
+		<button ng-click="add()">Add</button>
+		<h2>Contacts</h2>
+		<ul>
+			<li ng-repeat="contact in contacts">{{contact}}</li>
+		</ul>
+	</div>
+
+	
+	<script type="text/javascript">
+		function ContactController($scope){
+			$scope.contacts = ["jorge@gmail.com", "juan@gmail.com"];
+			$scope.add = function(){
+				$scope.contacts.push($scope.newcontact);
+				$scope.newcontact = "";
+			}
+		}
+	</script>
+</body>
+</html>
