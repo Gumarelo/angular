@@ -1,0 +1,17 @@
+<div class="ordenes view">
+	<div class="container">
+		<header>
+			<h3>Ordenes de todos los personales</h3>
+		</header>
+		<div>
+			<div class="row">
+				<div class="span12" data-ng-repeat="personal in personales | orderBy: 'apellido'">
+					<div class="indent">
+						<h4><a href="#/personalordenes/{{personal.id}}">{{ personal.nombre + ' ' + personal.apellido}}</a></h4>
+					</div>
+					<div data-ng-include="'/angular/customermanager/app/partials/ordenesTabla.html'"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

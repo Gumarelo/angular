@@ -1,0 +1,37 @@
+<div class="personales view">
+	<div class="container">
+		<header>
+			<h3>Personales</h3>
+		</header>
+		<div class="row">
+			<div class="span3">
+				Nombre:
+				<br />
+				<input data-ng-model="nuevoPersonal.nombre" type="text" placeholder="Nombre">
+			</div>
+			<div class="span3">
+				Apellido:
+				<br />
+				<input data-ng-model="nuevoPersonal.apellido" type="text" placeholder="Apellido">
+			</div>
+			<div class="span6">
+				Ciudad:
+				<br />
+				<input data-ng-model="nuevoPersonal.ciudad" type="text" placeholder="Ciudad">
+				<button id="submitPersonal" class="btn btn-primary" type="button" data-ng-disable="!nuevoPersonal.nombre || !nuevoPersonal.apellido || nuevoPersonal.ciudad" data-ng-click="insertarPersonal()">Insertar Personal</button>
+			</div>
+		</div>
+		<br /><br />
+		<div>
+			<div class="row cardContainer">
+				<div class="span3 card" data-ng-repeat="personal in personales | orderBy:'apellido'">
+					<button class="btn close cardClose" data-ng-click="borrarPersonal(personal.id)">&times;</button>
+					<div class="cardHeader">{{ personal.nombre + ' ' + personal.apellido}}</div>
+					<div class="cardBody">{{personal.ciudad}}</div>
+					<a href="#/personalordenes/{{personal.id}}" class="cardBody btn-link">Ver {{personal.ordenes.length}} ordenes</a>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+</div>

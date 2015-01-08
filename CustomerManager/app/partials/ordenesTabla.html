@@ -1,0 +1,39 @@
+<table class="table table-hover table-striped table-condensed table-bordered ordenesTabla" data-ng-controller="OrdenChildController">
+	<thead>
+		<tr>
+			<th data-ng-click="setOrden('producto')">Producto</th>
+			<th data-ng-click="setOrden('cantidad')">Cantidad</th>
+			<th data-ng-click="setOrden('precio')">Precio Unitario</th>
+			<th data-ng-click="setOrden('ordenTotal')">Total</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr data-ng-hide="personal.ordenes || personal.ordenes.length > 0" class="error">
+			<td colspan="4">
+				<div class="text-center"><strong>No se encontraron ordenes</strong></div>
+			</td>
+		</tr>
+		<tr data-ng-repeat="orden in personal.ordenes | orderBy:orderby:reverse">
+			<td>
+				{{ orden.producto }}
+			</td>
+			<td>
+				{{ orden.cantidad }}
+			</td>
+			<td>
+				{{ orden.precio | currency }}
+			</td>
+			<td>
+				{{ orden.ordenTotal | currency }}
+			</td>
+		</tr>
+		<tr class="info">
+			<td colspan="3">
+				&nbsp;
+			</td>
+			<td>
+				<strong> {{ ordenesTotales | currency}} </strong>
+			</td>
+		</tr>
+	</tbody>
+</table>
