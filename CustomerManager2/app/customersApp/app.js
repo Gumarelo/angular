@@ -1,4 +1,4 @@
-var app = angular.module('personalesApp', ['ngRoute']);
+var app = angular.module('personalesApp', ['ngRoute', 'ui.bootstrap']);
 
 //Aqui configuramos las rutas y asociamos cada ruta con una vista y un controlador
 app.config(function($routeProvider){

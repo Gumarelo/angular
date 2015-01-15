@@ -1,4 +1,4 @@
-app.controller('PersonalEditController', function($scope, $routeParams, personalesServicio){
+app.controller('PersonalEditController', function($scope, $routeParams, personalesServicio, modalService){
 
 	var personalID = ($routeParams.personalID) ? parseInt($routeParams.personalID) : 0;
 	$scope.nuevoPersonal = {};
@@ -50,7 +50,7 @@ app.controller('PersonalEditController', function($scope, $routeParams, personal
 			closeButtonText: 'Cancelar',
 			actionButtonText: 'Borrar Personal',
 			headerText: 'Borrar ' + nombrePersonal + '?',
-			bodyText: 'Esta seguro de que quiere borrar este personal?';
+			bodyText: 'Esta seguro de que quiere borrar este personal?'
 		};
 
 		modalService.showModal({}, modalOptions).then(function(resultado){
