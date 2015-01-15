@@ -3,6 +3,7 @@ var app = angular.module('personalesApp', ['ngRoute']);
 //Aqui configuramos las rutas y asociamos cada ruta con una vista y un controlador
 app.config(function($routeProvider){
 	var viewBase = '/angular/customermanager2/app/customersApp/views/';
+	
 	$routeProvider
 		.when('/personales',{
 			controller: 'PersonalesController',
@@ -13,6 +14,10 @@ app.config(function($routeProvider){
 			controller: 'PersonalOrdenesController',
 			templateUrl: viewBase + 'personales/personalordenes.html'
 		})
+		.when('/personaleditar/:personalID', {
+			controller: 'PersonalEditController',
+			templateUrl: viewBase + 'personales/personalEdit.html'
+		})
 		//Definimos una ruta para las ordenes
 		.when('/ordenes', {
 			controller: 'OrdenesController',
@@ -20,3 +25,5 @@ app.config(function($routeProvider){
 		})
 		.otherwise({redirectTo: '/personales'});
 });
+
+	

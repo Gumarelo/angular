@@ -1,0 +1,65 @@
+<div class="view">
+	<div class="container">
+		<header>
+			<h3><span class="glyphicon glyphicon-edit"></span>Personal</h3>
+		</header>
+
+		<form name="editForm" novalidate>
+			<div class="customerEdit">
+				
+				<div class="row">
+					<div class="col-md-12">
+						<h4>{{ nuevoPersonal.nombre + ' ' + nuevoPersonal.apellido}} <span data-ng-hide="nuevoPersonal.id == 0">(<a style="font-size:12pt" href="#/personalordenes/{{nuevoPersonal.id}}">Ver ordenes</a>)</span></h4>
+						<br />
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-2">
+						Nombre:
+					</div>
+					<div class="col-md-10">
+						<input type="text" name="nombre" class="form-control" data-ng-model="nuevoPersonal.nombre" required />
+						<!--<span class="errorMessage" ng-show="editForm.nombre.$touched && editForm.nombre.$invalid">
+							El nombre es requerido
+						</span>-->
+					</div>
+				</div>
+				<br />
+				<div class="row">
+					<div class="col-md-2">
+						Apellido:
+					</div>
+					<div class="col-md-10">
+						<input type="text" name="apellido" class="form-control" data-ng-model="nuevoPersonal.apellido" required />
+						<!--<span class="errorMessage" ng-show="editForm.apellido.$touched && editForm.apellido.$invalid">
+							El apellido es un campo requerido
+						</span>-->
+					</div>
+				</div>
+				<br />
+				<div class="row">
+					<div class="col-md-2">
+						Ciudad:
+					</div>
+					<div class="col-md-10">
+						<input type="text" name="ciudad" class="form-control" data-ng-model="nuevoPersonal.ciudad" required />
+						<!--<span class="errorMessage" ng-show="editForm.ciudad.$touched && editForm.ciudad.$invalid">
+							La ciudad es un campo requerido
+						</span>-->
+					</div>
+				</div>
+				<br />
+				<div class="row">
+					<div class="col-md-12">
+						<button type="submit" class="btn btn-primary" data-ng-click="guardarCambios()" ng-disabled="editForm.$invalid || !editForm.$dirty">
+							{{botonTexto}}
+						</button>
+						<button class="btn btn-danger" data-ng-if="nuevoPersonal.id > 0" data-ng-click="borrarPersonal(nuevoPersonal.id)">
+							Borrar Personal
+						</button>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>

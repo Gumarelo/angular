@@ -2,29 +2,35 @@
 <html data-ng-app="personalesApp">
 <head>
     <title>Administracion de Personal</title>
-    <link href="Content/bootstrap.min.css" rel="stylesheet" />
-    <link href="Content/bootstrap-responsive.min.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="Content/bootstrap.css" rel="stylesheet" />
     <link href="Content/customerManagementStyles.css" rel="stylesheet" />
+    <link href="Content/styles.css" rel="stylesheet" />
 </head>
 <body>
-
-    <div class="navbar navbar-fixed-top">
-        <div class="navbar-inner">
-            <div class="container">
+    <header class="navbar navbar-inner navbar-fixed-top" data-ng-controller="NavbarController">
+        <nav class="container">
+            <div class="navbar-header">
                 <a class="brand " href="#/">
-                    <img src="Content/Images/people.png" alt="logo"> Administracion Personal
+                    <img src="Content/Images/people.png" alt="logo">
+                     <span class="appTitle">Administracion Personal</span>
                 </a>
-                <ul class="nav nav-pills" data-ng-controller="NavbarController">
+            </div>
+            <div class="nav-container" data-collapse="isCollapsed">
+                
+                <ul class="nav navbar-nav nav-pills navBarPadding">
                     <li data-ng-class="{'active':getClass('/personales')}"><a href="#/personales">Personales</a></li>
                     <li data-ng-class="{'active':getClass('/ordenes')}"><a href="#/ordenes">Ordenes</a></li>
                 </ul>
             </div>
-        </div>
-    </div>
-
+        </nav>
+    </header>
+    
     <!-- Note that AngularJS 1.2+ now has a built-in ng-animation direction. Left in animated-view to show a 
          custom directive -->
-    <div animated-view></div>
+
+        <div animated-view></div>
+
 
 
     <div id="footer">
@@ -51,14 +57,15 @@
     <!-- UI Libs -->
     <script src="Scripts/bootstrap.js"></script>
 
-
     <!-- App libs -->
     <script src="app/customersApp/app.js"></script>
     <script src="app/customersApp/controllers/personales/personalesController.js"></script>
     <script src="app/customersApp/controllers/personales/personalOrdenesController.js"></script>
+    <script src="app/customersApp/controllers/personales/personalEditController.js"></script>
     <script src="app/customersApp/controllers/ordenes/ordenesController.js"></script>
     <script src="app/customersApp/controllers/ordenes/ordenChildController.js"></script>
     <script src="app/customersApp/services/personalesServicio.js"></script>
+    <script src="app/customersApp/controllers/navbarController.js"></script>
     <script src="app/customersApp/directives/animatedView.js"></script>
 </body>
 </html>
